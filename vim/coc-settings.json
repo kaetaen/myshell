@@ -1,0 +1,4 @@
+{
+  "eslint.enable": false,
+  "coc.preferences.diagnostic.enable": false
+}
