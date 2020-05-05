@@ -137,3 +137,5 @@ alias scrc='scrcpy --turn-screen-off -m '
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
