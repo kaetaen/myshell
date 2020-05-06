@@ -1,4 +1,6 @@
 {
   "eslint.enable": false,
-  "coc.preferences.diagnostic.enable": false
+  "coc.preferences.diagnostic.enable": false,
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false
 }
