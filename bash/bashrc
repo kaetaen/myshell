@@ -133,9 +133,11 @@ alias python='python3'
 alias v='sudo nvim'
 alias scrc='scrcpy --turn-screen-off -m '
 
-#export PATH="$(yarn global bin):$PATH"
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:~/android-studio/bin
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
