@@ -43,7 +43,11 @@ call plug#end()
 "----------------------------------------------"
 "---------CONFIGURAÇÕES PRINCIPAIS-------------"
 "----------------------------------------------"
-
+" Force python with 2 spaces for tab
+autocmd FileType python setlocal
+	\ expandtab
+        \ tabstop=2
+        \ shiftwidth=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
