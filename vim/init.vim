@@ -26,24 +26,9 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'toupeira/vim-desertink'
 call plug#end()
 
-"---------------------------------------------
-"| Recomendo a instação dos seguintes pacote: |
-"|                                            |
-"| npm install standard --global              |
-"| npm install live-server --global           |
-"| Coc-Install coc-tsserver                   |
-"| Coc-Install coc-html                       |
-"| Coc-Install coc-csss                       |
-"---------------------------------------------
-
 "----------------------------------------------"
 "---------CONFIGURAÇÕES PRINCIPAIS-------------"
 "----------------------------------------------"
-" Force python with 2 spaces for tab
-autocmd FileType python setlocal
-	\ expandtab
-        \ tabstop=2
-        \ shiftwidth=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -136,9 +121,9 @@ ca w!! w !sudo tee "%"
 function! Executar(arq) 
   :w
   if &filetype == 'javascript.jsx'
-    :exec '!time node' a:arq
+    :exec '!node' a:arq
   elseif &filetype == 'javascript'
-    :exec '!time node' a:arq 
+    :exec '!node' a:arq 
   else
     :exec "!live-server %:p:h"
   endif
