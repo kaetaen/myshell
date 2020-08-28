@@ -18,18 +18,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'scrooloose/nerdcommenter'
     Plug 'sheerun/vim-polyglot'
     Plug 'Yggdroot/indentLine'
-    Plug 'dense-analysis/ale'
     Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
     Plug 'pseewald/vim-anyfold'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'davidhalter/jedi'
-    Plug 'tpope/vim-endwise'
-    Plug 'junegunn/goyo.vim'
-    Plug 'StanAngeloff/php.vim'
-    Plug 'shawncplus/phpcomplete.vim'
-    Plug 'xolox/vim-lua-ftplugin'
-    Plug 'xolox/vim-misc'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'toupeira/vim-desertink'
 call plug#end()
@@ -71,8 +63,6 @@ set undolevels=300
 set incsearch
 set ignorecase
 set hlsearch
-set cursorline
-set cursorcolumn
 set scrolloff=5
 set foldmethod=indent
 set foldnestmax=10
@@ -113,26 +103,9 @@ let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 20
 
 let g:indentLine_color_term = 239
-let g:indentLine_char = '|'
+let g:indentLine_char = '│'
 
 autocmd FileType help,nerdtree IndentLinesToggle
-
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\   }
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma none'
-let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
-let g:ale_set_highlights = 0
-let b:ale_warn_about_trailing_whitespace = 0
 
 "----------------------------------------------"
 "---------CONFIGURAÇÕES PESSOAIS---------------"
@@ -145,7 +118,6 @@ inoremap <C-s> <C-\><C-o>:w<CR>
 tnoremap <Esc> <C-\><C-n>
 inoremap <C-x><C-x> <Esc>:wq! <CR>
 nnoremap <C-t> :sp+terminal<CR>
-noremap ff :!standard --fix % <CR>
 nnoremap z za
 nnoremap n gt
 vnoremap <F9> :sort<CR>
@@ -167,25 +139,6 @@ function! Executar(arq)
     :exec '!time node' a:arq
   elseif &filetype == 'javascript'
     :exec '!time node' a:arq 
-  elseif &filetype == 'java'
-    :exec "!javac %"
-    :exec "!time java -cp %:p:h %:t:r"
-  elseif &filetype == 'python'
-    :exec "!time python3" a:arq
-  elseif &filetype == 'ruby'
-    :exec "!time ruby" a:arq      
-  elseif &filetype == 'html'
-    :exec "!live-server %:p:h"
-  elseif &filetype == 'racket'
-    :exec "!racket" a:arq
-  elseif &filetype == 'c'
-    :exec "!time clang % && ./a.out %% rm -rf ./a.out"
-  elseif &filetype == 'sh'
-    :exec '!time bash' a:arq
-  elseif &filetype == 'php'
-    :exec '!time php' a:arq
-  elseif &filetype == 'lua'
-    :exec '!time lua' a:arq
   else
     :exec "!live-server %:p:h"
   endif
