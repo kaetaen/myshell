@@ -1,11 +1,19 @@
-if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
-  silent ! powershell -Command "
-  \   New-Item -Path ~\AppData\Local\nvim -Name autoload -Type Directory -Force;
-  \   Invoke-WebRequest
-  \   -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  \   -OutFile ~\AppData\Local\nvim\autoload\plug.vim
-  \ "
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if has('win32')
+  if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
+    silent ! powershell -Command "
+    \   New-Item -Path ~\AppData\Local\nvim -Name autoload -Type Directory -Force;
+    \   Invoke-WebRequest
+    \   -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    \   -OutFile ~\AppData\Local\nvim\autoload\plug.vim
+    \ "
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	endif
+else
+	if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+		silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	endif
 endif
 
 autocmd VimEnter *
@@ -86,7 +94,6 @@ let g:NERDSpaceDelims = 1
 map <C-f> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 20
-
 let g:indentLine_color_term = 239
 let g:indentLine_char = '│'
 
