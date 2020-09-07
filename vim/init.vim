@@ -1,7 +1,9 @@
 if has('win32')
   if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
-    silent ! powershell -Command "
-    \   New-Item -Path ~\AppData\Local\nvim -Name autoload -Type Directory -Force;
+    silent ! ilent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endifm -Name autoload -Type Directory -Force;
     \   Invoke-WebRequest
     \   -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     \   -OutFile ~\AppData\Local\nvim\autoload\plug.vim
@@ -13,6 +15,12 @@ else
 		silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
 		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  else
+		if empty(glob('~/.vim/autoload/plug.vim'))
+  		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+		endif	
 	endif
 endif
 
@@ -71,6 +79,9 @@ set laststatus=2
 "----------------------------------------------"
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
+
+
+let g:coc_disable_startup_warning = 1
 
 colo desertink
 let g:javascript_plugin_flow = 1 
