@@ -27,7 +27,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'xolox/vim-lua-ftplugin'
     Plug 'xolox/vim-misc'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'toupeira/vim-desertink'
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 call plug#end()
 
 "---------------------------------------------
@@ -85,7 +85,8 @@ set laststatus=2
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
 
-colo desertink
+colo challenger_deep
+
 let g:javascript_plugin_flow = 1 
 let g:user_emmet_leader_key=','
 
@@ -109,7 +110,7 @@ let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 20
 
 let g:indentLine_color_term = 239
-let g:indentLine_char = '|'
+let g:indentLine_char = '│'
 
 autocmd FileType help,nerdtree IndentLinesToggle
 
