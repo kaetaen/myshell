@@ -45,6 +45,10 @@ call plug#end()
 "----------------------------------------------"
 "---------CONFIGURAÇÕES PRINCIPAIS-------------"
 "----------------------------------------------"
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 855be38... nvim: force 2 space-width tabs for python files
 set softtabstop=2
 set shiftwidth=2
 set expandtab
