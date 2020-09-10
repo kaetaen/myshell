@@ -39,7 +39,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'pseewald/vim-anyfold'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'toupeira/vim-desertink'
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 call plug#end()
 
 "----------------------------------------------"
@@ -84,10 +84,15 @@ set laststatus=2
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
 
+<<<<<<< HEAD
 
 let g:coc_disable_startup_warning = 1
 
 colo desertink
+=======
+colo challenger_deep
+
+>>>>>>> return
 let g:javascript_plugin_flow = 1 
 let g:user_emmet_leader_key=','
 
