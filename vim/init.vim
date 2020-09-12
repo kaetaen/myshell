@@ -28,8 +28,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'xolox/vim-misc'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+    Plug 'dracula/vim'
 call plug#end()
 
+colo dracula
+  
 "---------------------------------------------
 "| Recomendo a instação dos seguintes pacote: |
 "|                                            |
@@ -84,8 +87,6 @@ set laststatus=2
 "----------------------------------------------"
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
-
-colo challenger_deep
 
 let g:javascript_plugin_flow = 1 
 let g:user_emmet_leader_key=','
@@ -157,6 +158,8 @@ cab WQ wq
 cab W w
 cab Q q
 ca w!! w !sudo tee "%"
+
+
 
 function! Executar(arq) 
   :w
