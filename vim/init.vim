@@ -19,10 +19,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'pseewald/vim-anyfold'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'toupeira/vim-desertink' 
+    Plug 'toupeira/vim-desertink'
+    Plug 'dracula/vim'
 call plug#end()
 
-colorscheme desertink
+colorscheme dracula
+
 
 set softtabstop=2
 set shiftwidth=2
@@ -164,3 +166,5 @@ augroup remember_folds
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
+
+hi Normal guibg=#161616
