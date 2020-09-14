@@ -10,41 +10,103 @@
 
 ## Descrição
 
-Esses são os meus principais arquivos de configuração do meu ambiente de desenvolvimento, sendo alguns deles responsáveis pelo shell no desktop linux, shell do mobile (termux) e pelo editor de texto neovim.
+Assim como muitos devs, sofro de SMD (Sindrome da Migração Constante de Distros Linux). Caso você também sofra deste transtorno, sabe como é chato estar sempre tendo que montar todo seu ambiente toda vez que muda ou testa alguma distribuição para saciar sua curiosidade. Por isso criei esse auxiliar para montar todo o ambiente que geralmente uso, cujo foco é economizar tempo e trabalho repetitivo (DRY!!!)
 
-## Bash 💻
-  ### Principais features
-  * Interoperabilidade entre mobile e desktop.
-  * Aliases dedicados ao git e diversos interpretradores: lua, python, node e etc.
-  ### Requisitos
-  * Basta linkar ou copiar o bashrc para diretório $HOME e pronto, seja feliz 😊.
-  ### Notas
-  * Alguns aliases são associados a softwares do desktop, logo não irão funcionar no mobile. 
+## Uso
 
-## Termux 📱
-  ### Principais features
-  * Atalhos personalizados para navegação, criação e nomeação de abas
-  * Tema e fonte inclusos
-  ### Requisitos
-  * Ter o termux instalado no smartphone 😜
+Você gosta de bolo? Vamos preparar nossa receita: o bom e velho passo-a-passo.
 
-## Neovim 📝
-  ### Principais features
-  * Autocomplete com deoplete
-  * Code runner personalizado
-  * Suporte aprimorado para Lua, Ruby, Javascript e Python
-  ### Requisitos
-  * Neovim +0.3.0v (caso esteja no desktop, instale os pacotes python recomendados na página de instrução de instalação do neovim)
-  * Python +3.6v
-  * NodeJS +12.0v
-  * Ter um compilador C instalado, tanto no mobile como no desktop. Recomendo o clang.
-  ### Notas
-  Para habilitar o suporte aprimorado no Python é necessário a instalação de alguns pacotes adicionais.
-  
-  ```
-  pip3 install pynvim neovim jedi --user
-  ```
-  O mesmo vale para o JavaScript
-  ```
-  npm install tern standard --global
-  ```
+### Ingredientes
+
+1. Git 
+2. Ter uma distribuição linux instalada em sua máquina (Fedora ou Debian/Ubuntu e deverivados).
+3. Gerenciador de pacotes **DNF** ou **APT**.
+4. Terminal com **bash**
+5. um copo quente e gostoso de café (opcional).
+
+### Modo de preparo
+
+1. Clone esse repositório.
+
+```
+git clone https://github.com/kaetaen/myshell.git
+```
+
+2. Acesse a pasta do projeto e dê permissão ao script.
+
+```
+cd myshell/src/ && sudo chmod +x install.sh
+```
+
+3. Execute o script e enquanto ele trabalha, tome o café quentinho.
+
+```
+./install.sh
+```
+
+4. Após finalizar, reinicie a máquina (não é necessário em alguns casos, mas é recomendável).
+
+### Recheios
+
+Existem 4 modos de instalação que podem ser definidos por flags de linha de comando, vamos conferir?
+
+
+> **Sem recheio**
+
+_Descrição:_
+
+É o modo padrão de instalação, lançado automaticamente no momento em que o script é executado. Nesse modo são definidos **init.vim** e **.bashrc**.
+
+
+> **Chocolate**
+
+_Descrição:_
+
+Gosta de chocolate? Nesse modo, além do modo padrão de instalação (sem recheio), são instalados os seguintes pacotes:
+
+* NVM
+* Curl
+* Git
+* Tree
+* NeoVim
+
+_Comando_:
+
+```
+./install.sh --packages
+```
+
+
+> **Morango**
+
+_Descrição:_
+
+Nesse modo além de instalar o modo padrão são instalados os temas:
+
+* Fonte JetBrains Mono
+* Tema GTK Flat Remix Blue Darkest
+
+_Comando:_
+
+```
+./install.sh --themes
+```
+
+> **Misto**
+
+_Descrição:_
+
+Nesse modo, são instalados tanto os arquivos de configuração como os pacotes e temas
+
+_Comando:_
+
+```
+./install.sh --all
+```
+
+## Nota
+
+Uma breve referência aos temas utilizados.
+
+* [Flat Remix](https://drasite.com/flat-remix)
+* [JetBrains Mono](https://www.jetbrains.com/pt-pt/lp/mono/)
