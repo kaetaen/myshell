@@ -119,7 +119,7 @@ fi
 
 
 echo -e '\e[6 q'
-alias p="python3.8"
+alias py="python3.8"
 alias n="node"
 alias l="lua5.3"
 alias v="nvim"
@@ -129,20 +129,21 @@ alias commit="git add . && git commit -m"
 alias push="git push"
 alias pull="git pull"
 alias clone="git clone"
-alias python='python3'
 alias v='sudo nvim'
 alias scrc='scrcpy --turn-screen-off -m '
 
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-export PATH=$PATH:~/android-studio/bin
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+#export PATH=$PATH:~/android-studio/bin
+#export ANDROID_HOME=~/Android/Sdk
+#export PATH=$PATH:$ANDROID_HOME/emulator
+#export PATH=$PATH:$ANDROID_HOME/tools
+#export PATH=$PATH:$ANDROID_HOME/tools/bin
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
