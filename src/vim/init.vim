@@ -18,9 +18,9 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'mattn/emmet-vim'
     Plug 'pseewald/vim-anyfold'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'toupeira/vim-desertink'
     Plug 'dracula/vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme dracula
