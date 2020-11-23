@@ -42,8 +42,9 @@ install_packages () {
       sudo apt update -y && sudo apt upgrade -y && sudo apt install $PACKAGES -y
   fi
 
-	# Install NVM
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+	# Install Node
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  sudo apt-get install -y nodejs
 }
 
 
