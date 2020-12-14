@@ -16,6 +16,7 @@ set_config_files (){
 	fi
 
 	# Create symbolic link for init.vim
+
 	if [ -f  ~/.config/nvim/init.vim ]
 		then
 			read -p "O arquivo init.vim já existe. Deseja sobrescreve-lo [s/N]: " overwrite_nvim
@@ -28,6 +29,19 @@ set_config_files (){
 		rm -rf ~/.config/nvim/
 		mkdir -p ~/.config/nvim/
 		ln -r -s ./vim/init.vim ~/.config/nvim/init.vim
+	fi
+
+	if [ -f  ~/.vimrc ]
+		then
+			read -p "O arquivo .vimrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_vim
+			if [ "$overwrite_vim" == "s" ]
+				then
+		rm -rf ~/.vimrc
+		ln -r -s ./vim/init.vim ~/.vimrc
+			fi
+	else
+		rm -rf ~/.vimrc
+		ln -r -s ./vim/init.vim ~/.vimrc
 	fi
 }
 
