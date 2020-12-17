@@ -1,13 +1,3 @@
-"_________________________________________________________
-"| Após instalar todos os plugins eu recomendo            |
-"| instalar o suporte para o Python e Node.               |
-"|                                                        |
-"| Acesse a pasta plugged/completor.vim/ e rode 'make js' |
-"| npm install tern standard --global                     |
-"| pip install pylint jedi                                |
-"|________________________________________________________|
-
-
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -36,9 +26,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'toupeira/vim-desertink'
     Plug 'dracula/vim'
-    Plug 'maralla/completor.vim'
-    Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-    Plug 'dense-analysis/ale'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme dracula
@@ -82,13 +70,6 @@ set splitbelow
 
 let g:javascript_plugin_flow = 1 
 let g:user_emmet_leader_key=','
-
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\   'python': ['pylint']
-\}
-
-let g:completor_python_binary = '/usr/bin/python3'
 
 autocmd vimenter * NERDTree
 map <F3> :NERDTreeToggle<CR>
