@@ -27,6 +27,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'toupeira/vim-desertink'
     Plug 'dracula/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 colorscheme dracula
