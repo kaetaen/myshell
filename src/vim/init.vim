@@ -141,6 +141,8 @@ function! Executar(arq)
     :exec "!racket" a:arq
   elseif &filetype == 'c'
     :exec "!time clang % && ./a.out %% rm -rf ./a.out"
+  elseif &filetype == 'cpp'
+    :exec "!time g++ % && ./a.out %% rm -rf ./a.out"
   elseif &filetype == 'sh'
     :exec '!time bash' a:arq
   elseif &filetype == 'php'
