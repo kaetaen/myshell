@@ -30,8 +30,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-colorscheme dracula
-
+colorscheme desertink
 
 set softtabstop=2
 set shiftwidth=2
@@ -177,4 +176,3 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
-hi Normal guibg=#17181f
