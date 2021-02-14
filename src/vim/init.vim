@@ -28,9 +28,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'dracula/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'ryanoasis/vim-devicons'
+    Plug 'joshdick/onedark.vim' 
 call plug#end()
 
-colorscheme desertink
+colo onedark
 
 set softtabstop=2
 set shiftwidth=2
@@ -176,3 +177,4 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
+hi Normal guibg=#000000
