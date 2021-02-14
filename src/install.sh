@@ -67,7 +67,7 @@ set_theme () {
 	sudo ln -r -s ./theme/Flat-Remix-GTK-Blue-Darkest-Solid-NoBorder/ /usr/share/themes/
 
 	# Set fonts
-	sudo ln -r -s ./theme/jetbrains-mono/ /usr/share/fonts/
+	sudo ln -r -s ./theme/hack-font/ /usr/share/fonts/
 }
 
 ARGS="$*"
@@ -87,7 +87,7 @@ PKGS_TXT="Seu Sistema será atualizado e em seguida serão instalados:
 "
 THEMES_TXT="Os seguintes temas serão instalados:
   > Flat Remix Blue Darkest No Border Theme
-  > JetBrains Mono Font
+  > Hack Font
 "
 
 cat ".banners/init"
