@@ -29,6 +29,8 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'ryanoasis/vim-devicons'
     Plug 'joshdick/onedark.vim' 
+    Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 colo onedark
@@ -69,6 +71,11 @@ set splitbelow
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
 
+
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 let g:javascript_plugin_flow = 1 
 let g:user_emmet_leader_key=','
 
@@ -87,7 +94,7 @@ let NERDTreeIgnore = [
 \]
 let NERDTreeShowHidden=1
 let g:NERDSpaceDelims = 1
-map <C-f> :NERDTreeToggle<CR>
+map <C-d> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 20
 
@@ -101,7 +108,6 @@ autocmd FileType help,nerdtree IndentLinesToggle
 "----------------------------------------------"
 
 
-inoremap <C-f>  <C-x><C-o>
 inoremap ;; <Esc>
 inoremap <C-s> <C-\><C-o>:w<CR>
 tnoremap <Esc> <C-\><C-n>
