@@ -66,7 +66,9 @@ set foldlevel=2
 set statusline+=%F
 set laststatus=2
 set splitbelow
-
+set cursorline
+set ruler
+set colorcolumn=80
 "----------------------------------------------"
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
