@@ -109,4 +109,4 @@ _Comando:_
 Uma breve referência aos temas utilizados.
 
 * [Flat Remix](https://drasite.com/flat-remix)
-* [JetBrains Mono](https://www.jetbrains.com/pt-pt/lp/mono/)
+* [Hack](https://sourcefoundry.org/hack/)
