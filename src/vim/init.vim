@@ -185,4 +185,7 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
-hi Normal guibg=#222222
+"hi Normal guibg=#222222
+
+
+hi Normal guibg=#111111
