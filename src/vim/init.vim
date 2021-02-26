@@ -28,12 +28,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'dracula/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'ryanoasis/vim-devicons'
-    Plug 'joshdick/onedark.vim' 
     Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
-colo onedark
+colo dracula
 
 set softtabstop=2
 set shiftwidth=2
@@ -185,7 +184,4 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
-"hi Normal guibg=#222222
-
-
-hi Normal guibg=#111111
+hi Normal guibg=#1d1f26
