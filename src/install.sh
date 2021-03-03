@@ -64,10 +64,10 @@ install_packages () {
 
 set_theme () {
 	# Set themes
-	sudo ln -r -s ./theme/purple-theme/ /usr/share/themes/
+	sudo ln -r -s ./theme/themee/ /usr/share/themes/
 	# Set icons
-	sudo ln -r -s ./theme/oreo_cursors /usr/share/icons/
-	sudo ln -r -s ./theme/reversal-purple-dark-icons/ /usr/share/icons/
+	sudo ln -r -s ./theme/cursorr/ /usr/share/icons/
+	sudo ln -r -s ./theme/iconss/ /usr/share/icons/
 	# Set fonts
 	sudo ln -r -s ./theme/hack-font/ /usr/share/fonts/
 }
