@@ -179,3 +179,5 @@ augroup remember_folds
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
+
+ hi Normal guibg=#0F111A
