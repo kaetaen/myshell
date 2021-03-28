@@ -20,19 +20,15 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'scrooloose/nerdcommenter'
     Plug 'sheerun/vim-polyglot'
     Plug 'Yggdroot/indentLine'
-    Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
     Plug 'pseewald/vim-anyfold'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'toupeira/vim-desertink'
-    Plug 'dracula/vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'liuchengxu/space-vim-theme'
 call plug#end()
 
-colo dracula
+colorscheme space_vim_theme
 
 set softtabstop=2
 set shiftwidth=2
@@ -109,7 +105,7 @@ autocmd FileType help,nerdtree IndentLinesToggle
 "----------------------------------------------"
 
 
-inoremap ;; <Esc>
+inoremap ;; <C-x><C-o>
 inoremap <C-s> <C-\><C-o>:w<CR>
 tnoremap <Esc> <C-\><C-n>
 inoremap <C-x><C-x> <Esc>:wq! <CR>
@@ -183,5 +179,3 @@ augroup remember_folds
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
-
-hi Normal guibg=#1d1f26
