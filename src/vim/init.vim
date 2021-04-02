@@ -16,19 +16,22 @@ autocmd VimEnter *
   \ | endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
-    Plug 'scrooloose/nerdtree'
-    Plug 'scrooloose/nerdcommenter'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'Yggdroot/indentLine'
-    Plug 'mattn/emmet-vim'
-    Plug 'pseewald/vim-anyfold'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'liuchengxu/space-vim-theme'
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'Yggdroot/indentLine'
+  Plug 'mattn/emmet-vim'
+  Plug 'pseewald/vim-anyfold'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'ayu-theme/ayu-vim'    
+  Plug 'neoclide/coc.nvim'
 call plug#end()
 
-colorscheme space_vim_theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
 
 set softtabstop=2
 set shiftwidth=2
@@ -180,4 +183,4 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
- hi Normal guibg=#0F111A
+ "hi Normal guibg=#0F111A
