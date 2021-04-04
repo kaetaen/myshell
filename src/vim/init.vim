@@ -155,8 +155,8 @@ function! Executar(arq)
     :exec '!time php' a:arq
   elseif &filetype == 'lua'
     :exec '!time lua' a:arq
-  else
-    :exec "!live-server %:p:h"
+  elseif &filetype == 'go'
+    :exec '!go run' a:arq
   endif
 endfunction
 inoremap <C-n> <Esc>:call Executar(shellescape(@%, 1))<CR>
