@@ -25,12 +25,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'ayu-theme/ayu-vim'    
+  Plug 'dracula/vim'    
   Plug 'neoclide/coc.nvim'
 call plug#end()
 
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+   " for dark version of theme
+colorscheme dracula
 
 
 set softtabstop=2
@@ -183,4 +183,4 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
- "hi Normal guibg=#0F111A
+hi Normal guibg=#1D2026
