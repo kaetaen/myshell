@@ -24,15 +24,16 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'pseewald/vim-anyfold'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'dracula/vim'    
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
+  Plug 'ntk148v/vim-horizon'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
    " for dark version of theme
-colorscheme dracula
+colorscheme horizon
 
-
+set encoding=UTF-8
 set softtabstop=2
 set shiftwidth=2
 set expandtab

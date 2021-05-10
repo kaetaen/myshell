@@ -1,12 +1,13 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=AD-Plum
-Comment=A flat theme with transparent elements
+Name=Flat-Remix-GTK-Red-Dark
+Comment=Flat-Remix-GTK-Red theme
 Encoding=UTF-8
 
+
 [X-GNOME-Metatheme]
-GtkTheme=AD-Plum
-MetacityTheme=AD-Plum
-IconTheme=gnome
+GtkTheme=Flat-Remix-GTK-Red-Dark
+MetacityTheme=Flat-Remix-GTK-Red-Dark
+IconTheme=Flat-Remix-Red-Dark
 CursorTheme=DMZ-Black
 ButtonLayout=menu:minimize,maximize,close
