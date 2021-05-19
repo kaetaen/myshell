@@ -26,12 +26,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
-  Plug 'ntk148v/vim-horizon'
+  Plug 'jschmold/sweet-dark.vim'
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
    " for dark version of theme
-colorscheme horizon
+colorscheme sweet_dark
 
 set encoding=UTF-8
 set softtabstop=2
@@ -113,6 +113,7 @@ inoremap ;; <C-x><C-o>
 inoremap <C-s> <C-\><C-o>:w<CR>
 tnoremap <Esc> <C-\><C-n>
 inoremap <C-x><C-x> <Esc>:wq! <CR>
+noremap <F6> :CocCommand rest-client.request <CR>
 nnoremap <C-t> :sp+terminal<CR>
 nnoremap z za
 nnoremap n gt
@@ -184,4 +185,3 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
-hi Normal guibg=#1D2026
