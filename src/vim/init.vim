@@ -72,6 +72,9 @@ set colorcolumn=80
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
 
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
@@ -81,6 +84,8 @@ let g:javascript_plugin_flow = 1
 let g:user_emmet_leader_key=','
 
 autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
+
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore = [
   \'\.git[[dir]]',
@@ -95,9 +100,13 @@ let NERDTreeIgnore = [
 \]
 let NERDTreeShowHidden=1
 let g:NERDSpaceDelims = 1
-map <C-d> :NERDTreeToggle<CR>
+map <C-d> :NERDTreeToggle <CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize = 20
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 let g:indentLine_color_term = 239
 let g:indentLine_char = '│'
