@@ -26,12 +26,13 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
-  Plug 'jschmold/sweet-dark.vim'
+  Plug 'ntk148v/vim-horizon'
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
    " for dark version of theme
-colorscheme sweet_dark
+"colorscheme sweet_dark
+colo horizon
 
 set encoding=UTF-8
 set softtabstop=2
