@@ -17,8 +17,6 @@ autocmd VimEnter *
 
 call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'sheerun/vim-polyglot'
   Plug 'Yggdroot/indentLine'
   Plug 'mattn/emmet-vim'
   Plug 'pseewald/vim-anyfold'
@@ -26,13 +24,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
-  Plug 'ntk148v/vim-horizon'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'tomasr/molokai'
 call plug#end()
 
-   " for dark version of theme
-"colorscheme sweet_dark
-colo horizon
+colo molokai
 
 set encoding=UTF-8
 set softtabstop=2
