@@ -26,6 +26,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tomasr/molokai'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 colo molokai
@@ -62,9 +63,7 @@ set foldlevel=2
 set statusline+=%F
 set laststatus=2
 set splitbelow
-set cursorline
-set ruler
-set colorcolumn=80
+set clipboard=unnamed,unnamedplus
 "----------------------------------------------"
 "---------CONFIGURAÇÕES DE PLUGINS-------------"
 "----------------------------------------------"
