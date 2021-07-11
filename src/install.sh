@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv"
+  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -55,7 +55,6 @@ install_packages () {
     then
       sudo apt update -y && sudo apt upgrade -y && sudo apt install $PACKAGES -y
   fi
-
 
 	# Install Node
   curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -85,6 +84,14 @@ set_theme () {
 	
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
+
+
+	# Create Terminator Folder and set theme
+	mkdir ~/.config/terminator
+	git clone https://github.com/dracula/terminator.git
+	./terminator/install.sh
+	rm -rf terminator/
+
 
 	wget -qO- https://git.io/papirus-folders-install | sh
 	papirus-folders --color teal
