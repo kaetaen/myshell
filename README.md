@@ -64,11 +64,25 @@ _Descrição:_
 
 Gosta de chocolate? Nesse modo, além do modo padrão de instalação (sem recheio), são instalados os seguintes pacotes:
 
-* NVM
-* Curl
+**Software**
+
 * Git
 * Tree
-* NeoVim
+* NeoVim 
+* Curl 
+* PHP 
+* PHPMyAdmin
+* Apache 
+* Composer
+* NodeJS
+* MySQL 
+* Python3 with PIP and Virtual Enviroments 
+* Terminator
+* VLC Media Player
+
+**Games**
+
+* Red Eclipse 
 
 _Comando_:
 
@@ -83,8 +97,19 @@ _Descrição:_
 
 Nesse modo além de instalar o modo padrão são instalados os temas:
 
-* Fonte JetBrains Mono
-* Tema GTK Flat Remix Blue Darkest
+**Temas**
+
+* Sweet Dark
+* Dracula para o Terminator
+
+**Icones**
+
+* Fossa Cursores
+* Papirus Dark
+
+**Fontes**
+
+* NERD Hack
 
 _Comando:_
 
@@ -103,10 +128,3 @@ _Comando:_
 ```
 ./install.sh --all
 ```
-
-## Nota
-
-Uma breve referência aos temas utilizados.
-
-* [Flat Remix](https://drasite.com/flat-remix)
-* [Hack](https://sourcefoundry.org/hack/)
