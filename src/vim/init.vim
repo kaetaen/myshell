@@ -25,11 +25,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'tomasr/molokai'
+  Plug 'liuchengxu/space-vim-dark'
   Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-colo molokai
+colorscheme space-vim-dark
+hi Comment cterm=italic
 
 set encoding=UTF-8
 set softtabstop=2
