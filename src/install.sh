@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl"
+  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -56,20 +56,38 @@ install_packages () {
       sudo apt update -y && sudo apt upgrade -y && sudo apt install $PACKAGES -y
   fi
 
+
 	# Install Node
   curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
   sudo apt-get install -y nodejs
+
+	# Install Composer
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+	php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified';  } else { echo 'Installer corrupt'; unlink('composer-setup.php');  } echo PHP_EOL;"
+	php composer-setup.php
+	php -r "unlink('composer-setup.php');"
+	sudo mv composer.phar /usr/local/bin/composer
+
+	#install phpmyadmin
+	wget https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip
+	unzip phpMyAdmin-5.1.1-all-languages.zip
+	rm phpMyAdmin-5.1.1-all-languages.zip
+	mv phpMyAdmin-5.1.1-all-languages/ phpmyadmin
+	sudo mv phpmyadmin /var/www/html/
 }
 
 
 set_theme () {
 	# Set themes
-	sudo ln -r -s ./theme/themee/ /usr/share/themes/
+	sudo cp -r ./theme/Sweet-Dark /usr/share/themes/
 	# Set icons
-	sudo ln -r -s ./theme/cursorr/ /usr/share/icons/
-	sudo ln -r -s ./theme/iconss/ /usr/share/icons/
+	sudo cp -r ./theme/FossaCursors /usr/share/icons/
+	
 	# Set fonts
-	sudo ln -r -s ./theme/hack-font/ /usr/share/fonts/
+	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
+
+	wget -qO- https://git.io/papirus-folders-install | sh
+	papirus-folders --color teal
 }
 
 ARGS="$*"
