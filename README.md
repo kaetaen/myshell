@@ -79,6 +79,7 @@ Gosta de chocolate? Nesse modo, além do modo padrão de instalação (sem reche
 * Python3 with PIP and Virtual Enviroments 
 * Terminator
 * VLC Media Player
+* RedShift
 
 **Games**
 
