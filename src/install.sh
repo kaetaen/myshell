@@ -1,18 +1,18 @@
 #!/bin/bash
 
 set_config_files (){
-	#Create symbolic link for .bashrc
-	if [ -f  ~/.bashrc ]
+	#Create symbolic link for .zsh
+	if [ -f  ~/.zshrc ]
 		then
-			read -p "O arquivo .bashrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
+			read -p "O arquivo .zshrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
 			if [ "$overwrite_bash" == "s" ]
 				then
-		rm -rf ~/.bashrc
-		ln -r -s ./bash/bashrc ~/.bashrc
+		rm -rf ~/.zshrc
+		ln -r -s ./bash/zshrc ~/.zshrc
 			fi
 	else
-		 rm -rf ~/.bashrc
-		 ln -r -s ./bash/bashrc ~/.bashrc
+		 rm -rf ~/.zshrc
+		 ln -r -s ./bash/zshrc ~/.zshrc
 	fi
 
 	# Create symbolic link for init.vim
@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk "
+  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -85,16 +85,22 @@ set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
 
-
 	# Create Terminator Folder and set theme
 	mkdir ~/.config/terminator
 	git clone https://github.com/dracula/terminator.git
 	./terminator/install.sh
 	rm -rf terminator/
 
-
+	# Install papirus-folders
 	wget -qO- https://git.io/papirus-folders-install | sh
 	papirus-folders --color teal
+
+	# Install Oh-my-zsh 
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	
+	# Install Oh-my-zsh aditional plugins
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 }
 
 ARGS="$*"
@@ -103,17 +109,29 @@ THEMES="--themes"
 ALL="--all"
 CONFIG_TXT="Serão inseridos arquivos de configuração para: 
   > NeoVim  ==>  init.vim
-  > Bash    ==>  .bashrc
+  > ZSH    ==>  .zshrc
 "
 PKGS_TXT="Seu Sistema será atualizado e em seguida serão instalados: 
-  > NVM
-  > NeoVim
-  > Git
-  > Tree
-  > Curl
+	> Git
+	> Tree
+	> NeoVim
+	> Curl
+	> Papirus Icon Theme
+	> PHP
+	> Apache
+	> MySQL
+	> PIP
+	> Virtual Envs for Python
+	> Terminator
+	> Redeclipse
+	> VLC
+	> RedShift
+	> ZSH
 "
+
 THEMES_TXT="Os seguintes temas serão instalados:
-  > Flat Remix Blue Darkest No Border Theme
+  > Sweet Dark
+	> Fossa Cursors
   > Hack Font
 "
 
@@ -138,10 +156,11 @@ elif [[ "$ARGS" == *"$ALL"*  ]]
 		echo "$THEMES_TXT"
 		echo "$PKGS_TXT"
 		set_config_files
-		set_theme
 		install_packages
+		set_theme
 else
 	echo "$CONFIG_TXT"
 	set_config_files
 fi
+
 cat ".banners/done"
