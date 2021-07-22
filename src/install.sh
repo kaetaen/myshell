@@ -84,7 +84,7 @@ set_theme () {
 	
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
-
+	sudo cp -r ./theme/operator-font/ /usr/share/fonts/
 	# Create Terminator Folder and set theme
 	mkdir ~/.config/terminator
 	git clone https://github.com/dracula/terminator.git
@@ -133,6 +133,7 @@ THEMES_TXT="Os seguintes temas serão instalados:
   > Sweet Dark
 	> Fossa Cursors
   > Hack Font
+	> Operator Font
 "
 
 cat ".banners/init"

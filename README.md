@@ -111,6 +111,7 @@ Nesse modo além de instalar o modo padrão são instalados os temas:
 **Fontes**
 
 * NERD Hack
+* NERD Operator
 
 _Comando:_
 
