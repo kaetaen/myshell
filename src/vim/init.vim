@@ -25,11 +25,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
   Plug 'neoclide/coc.nvim'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'liuchengxu/space-vim-dark'
   Plug 'sheerun/vim-polyglot'
+  Plug 'ntk148v/vim-horizon'
 call plug#end()
 
-colorscheme space-vim-dark
+colorscheme horizon
 hi Comment cterm=italic
 
 set encoding=UTF-8

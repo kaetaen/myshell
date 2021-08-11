@@ -78,7 +78,7 @@ install_packages () {
 
 set_theme () {
 	# Set themes
-	sudo cp -r ./theme/Sweet-Dark /usr/share/themes/
+	sudo cp -r ./theme/Numix-dark /usr/share/themes/
 	# Set icons
 	sudo cp -r ./theme/FossaCursors /usr/share/icons/
 	
@@ -86,14 +86,10 @@ set_theme () {
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
 	sudo cp -r ./theme/operator-font/ /usr/share/fonts/
 	# Create Terminator Folder and set theme
-	mkdir ~/.config/terminator
-	git clone https://github.com/dracula/terminator.git
-	./terminator/install.sh
-	rm -rf terminator/
 
 	# Install papirus-folders
 	wget -qO- https://git.io/papirus-folders-install | sh
-	papirus-folders --color teal
+	papirus-folders --color red
 
 	# Install Oh-my-zsh 
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
