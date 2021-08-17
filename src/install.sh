@@ -79,11 +79,7 @@ install_packages () {
 set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
-
-	# Install papirus-folders
-	wget -qO- https://git.io/papirus-folders-install | sh
-	papirus-folders --color red
-
+	
 	# Install Oh-my-zsh 
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	
