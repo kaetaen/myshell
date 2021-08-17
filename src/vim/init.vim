@@ -27,9 +27,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
   Plug 'ntk148v/vim-horizon'
+  Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
-colorscheme horizon
+colorscheme palenight
 hi Comment cterm=italic
 
 set encoding=UTF-8
