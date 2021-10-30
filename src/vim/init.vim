@@ -29,8 +29,14 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'toupeira/vim-desertink'
 call plug#end()
 
-colorscheme desertink
-hi Comment cterm=italic
+set background=dark
+if version > 580
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
+endif
+let g:colors_name="desertink"
 
 set encoding=UTF-8
 set softtabstop=2
