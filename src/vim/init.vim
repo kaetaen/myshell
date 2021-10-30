@@ -26,11 +26,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'ntk148v/vim-horizon'
-  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'toupeira/vim-desertink'
 call plug#end()
 
-colorscheme palenight
+colorscheme desertink
 hi Comment cterm=italic
 
 set encoding=UTF-8
