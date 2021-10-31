@@ -26,18 +26,17 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'toupeira/vim-desertink'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
-set background=dark
-if version > 580
-  hi clear
-  if exists("syntax_on")
-    syntax reset
-  endif
-endif
-let g:colors_name="desertink"
+color tokyonight
+let g:tokyonight_style = 'night'
+let g:tokyonight_italic_comments = 1
+let g:tokyonight_italic_keywords = 1
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_italic_variables = 1
 
+set inccommand=split
 set encoding=UTF-8
 set softtabstop=2
 set shiftwidth=2
@@ -182,7 +181,6 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-let mapleader = ","
 
 augroup omni_complete
     autocmd! 
