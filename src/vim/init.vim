@@ -27,14 +27,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  Plug 'pR0Ps/molokai-dark'
 call plug#end()
 
-color tokyonight
-let g:tokyonight_style = 'night'
-let g:tokyonight_italic_comments = 1
-let g:tokyonight_italic_keywords = 1
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_italic_variables = 1
+color molokai-dark
 
 set inccommand=split
 set encoding=UTF-8
