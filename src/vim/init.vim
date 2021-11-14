@@ -185,10 +185,5 @@ augroup omni_complete
 augroup END
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
 
 "hi Normal guibg=#0F111A
