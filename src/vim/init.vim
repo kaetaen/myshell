@@ -186,4 +186,4 @@ augroup END
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 
-"hi Normal guibg=#0F111A
+hi Normal guibg=#040908
