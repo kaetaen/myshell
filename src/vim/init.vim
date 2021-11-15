@@ -23,14 +23,13 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
-  Plug 'neoclide/coc.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'master'}
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-  Plug 'pR0Ps/molokai-dark'
+  Plug 'dracula/vim'
 call plug#end()
 
-color molokai-dark
+color dracula
 
 set inccommand=split
 set encoding=UTF-8
@@ -185,5 +184,3 @@ augroup omni_complete
 augroup END
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-
-hi Normal guibg=#040908
