@@ -26,10 +26,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'master'}
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'dracula/vim'
+  Plug 'ntk148v/vim-horizon'
 call plug#end()
 
-color dracula
+set termguicolors
+
+colorscheme horizon
 
 set inccommand=split
 set encoding=UTF-8
