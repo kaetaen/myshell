@@ -23,7 +23,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf.vim', { 'do': 'sudo apt-get install ripgrep' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   
-  Plug 'neoclide/coc.nvim', {'branch': 'master'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
   Plug 'ntk148v/vim-horizon'
