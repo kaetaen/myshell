@@ -4,15 +4,15 @@ set_config_files (){
 	#Create symbolic link for .zsh
 	if [ -f  ~/.zshrc ]
 		then
-			read -p "O arquivo .zshrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
+			read -p "O arquivo .bashrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
 			if [ "$overwrite_bash" == "s" ]
 				then
-		rm -rf ~/.zshrc
-		ln -r -s ./bash/zshrc ~/.zshrc
+		rm -rf ~/.bashrc
+		ln -r -s ./bash/bashrc ~/.bashrc
 			fi
 	else
-		 rm -rf ~/.zshrc
-		 ln -r -s ./bash/zshrc ~/.zshrc
+		 rm -rf ~/.bashrc
+		 ln -r -s ./bash/bashrc ~/.bashrc
 	fi
 
 	# Create symbolic link for init.vim
@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator  redeclipse vlc redshift-gtk zsh qt5-style-kvantum adapta-kde qt5-style-kvantum-l10n qt5-style-kvantum-themes"
+  PACKAGES="git arc-theme tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator  redeclipse vlc redshift-gtk"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -79,13 +79,6 @@ install_packages () {
 set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
-	
-	# Install Oh-my-zsh 
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	
-	# Install Oh-my-zsh aditional plugins
-	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 }
 
 ARGS="$*"
@@ -94,7 +87,7 @@ THEMES="--themes"
 ALL="--all"
 CONFIG_TXT="Serão inseridos arquivos de configuração para: 
   > NeoVim  ==>  init.vim
-  > ZSH    ==>  .zshrc
+  > Bash    ==>  .bashrc
 "
 PKGS_TXT="Seu Sistema será atualizado e em seguida serão instalados: 
 	> Git
