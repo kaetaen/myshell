@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git arc-theme tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator  redeclipse vlc redshift-gtk"
+  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -79,6 +79,10 @@ install_packages () {
 set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
+	sudo cp -r ./theme/Midnight-RedNight/ /usr/share/themes/
+	sudo cp -r ./theme/Numix-Cursor /usr/share/icons/
+	
+	wget -qO- https://git.io/papirus-folders-install | sh
 }
 
 ARGS="$*"

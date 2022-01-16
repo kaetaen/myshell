@@ -27,11 +27,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
   Plug 'joshdick/onedark.vim'
+  Plug 'ntk148v/vim-horizon'
 call plug#end()
 
 set termguicolors
 
-colorscheme onedark
+colorscheme horizon
 
 set inccommand=split
 set encoding=UTF-8
