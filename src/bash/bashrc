@@ -138,6 +138,7 @@ alias scrc='scrcpy --turn-screen-off -m '
 alias d='cd /data/dev/'
 alias vra="pactl load-module module-loopback latency_msec=500"
 alias vrd="systemctl --user restart pulseaudio.service"
+alias venv="source $HOME/dev/.venv/bin/activate"
 
 
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
