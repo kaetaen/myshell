@@ -27,12 +27,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
   Plug 'joshdick/onedark.vim'
-  Plug 'ntk148v/vim-horizon'
+  Plug 'tomasr/molokai'
 call plug#end()
 
 set termguicolors
 
-colorscheme horizon
+colorscheme molokai
 
 set inccommand=split
 set encoding=UTF-8
@@ -117,6 +117,8 @@ autocmd FileType help,nerdtree IndentLinesToggle
 "---------CONFIGURAÇÕES PESSOAIS---------------"
 "----------------------------------------------"
 
+"let g:molokai_original = 1
+"let g:rehash256 = 1
 
 inoremap ;; <C-x><C-o>
 inoremap <C-s> <C-\><C-o>:w<CR>
@@ -187,4 +189,3 @@ augroup omni_complete
 augroup END
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-hi Normal ctermbg=16 guibg=#000000

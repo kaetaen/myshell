@@ -141,7 +141,8 @@ alias vrd="systemctl --user restart pulseaudio.service"
 alias venv="source $HOME/dev/.venv/bin/activate"
 
 
-#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+export PATH=$PATH:$JAVA_HOME/bin
 #export PATH=$PATH:~/android-studio/bin
 #export ANDROID_HOME=~/Android/Sdk
 #export PATH=$PATH:$ANDROID_HOME/emulator
