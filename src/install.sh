@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk"
+  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -83,6 +83,20 @@ set_theme () {
 	sudo cp -r ./theme/Numix-Cursor/ /usr/share/icons/
 	
 	wget -qO- https://git.io/papirus-folders-install | sh
+	# > OH MY ZSH
+	# 
+	# OhMyZsh
+	# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	#
+	# SpaceShip Theme
+	#		git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+	#		ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+	# 
+	# ZSH_Suggestions
+	#		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	# 
+	# ZSH_syntaxhighlight
+	#		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
 ARGS="$*"

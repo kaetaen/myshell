@@ -136,8 +136,8 @@ alias clone="git clone"
 alias v='sudo nvim'
 alias scrc='scrcpy --turn-screen-off -m '
 alias d='cd /data/dev/'
-alias vra="pactl load-module module-loopback latency_msec=500"
-alias vrd="systemctl --user restart pulseaudio.service"
+alias vra="pactl load-module module-loopback latency_msec=1"
+alias vrd="pactl unload-module module-loopback"
 alias venv="source $HOME/dev/.venv/bin/activate"
 
 
