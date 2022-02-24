@@ -78,7 +78,7 @@ install_packages () {
 
 set_theme () {
 	# Set fonts
-	sudo cp -r ./theme/hack-font/ /usr/share/fonts/
+	sudo cp -r ./theme/jetbrainsmono /usr/share/fonts/
 	sudo cp -r ./theme/flatred/ /usr/share/themes/
 	sudo cp -r ./theme/Numix-Cursor/ /usr/share/icons/
 	
