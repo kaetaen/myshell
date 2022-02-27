@@ -189,4 +189,4 @@ augroup omni_complete
 augroup END
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
- hi Normal guibg=#181818	
+ hi Normal guibg=#16171d
