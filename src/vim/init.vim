@@ -28,18 +28,16 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'joshdick/onedark.vim'
   Plug 'tomasr/molokai'
-  Plug 'ghifarit53/tokyonight-vim'
+  Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
-set termguicolors
+colorscheme dracula
 
 set termguicolors
 
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
+colorscheme dracula
 
-colorscheme tokyonight
 
 set inccommand=split
 set encoding=UTF-8
