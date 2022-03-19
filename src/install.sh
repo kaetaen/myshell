@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl papirus-icon-theme php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
+  PACKAGES="git tree neovim curl php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -57,7 +57,7 @@ install_packages () {
   fi
 
 	# Install Node
-  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
   sudo apt-get install -y nodejs
 
 	# Install Composer
@@ -83,9 +83,10 @@ set_theme () {
 	sudo cp -r ./theme/Dracula-cursors/ /usr/share/icons/
 	sudo cp -r ./theme/Dracula-folders/ /usr/share/icons/
 	
-	wget -qO- https://git.io/papirus-folders-install | sh
-	# > OH MY ZSH
-	# 
+	# > TERMINATOR
+	# git clone https://github.com/dracula/terminator.git
+	# cd terminator ./install.sh
+
 	# OhMyZsh
 	# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	#
