@@ -79,8 +79,9 @@ install_packages () {
 set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/jetbrainsmono /usr/share/fonts/
-	sudo cp -r ./theme/flatred/ /usr/share/themes/
-	sudo cp -r ./theme/Numix-Cursor/ /usr/share/icons/
+	sudo cp -r ./theme/Dracula /usr/share/themes/
+	sudo cp -r ./theme/Dracula-cursors/ /usr/share/icons/
+	sudo cp -r ./theme/Dracula-folders/ /usr/share/icons/
 	
 	wget -qO- https://git.io/papirus-folders-install | sh
 	# > OH MY ZSH
