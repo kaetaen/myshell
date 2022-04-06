@@ -26,18 +26,13 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'joshdick/onedark.vim'
-  Plug 'tomasr/molokai'
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'haishanh/night-owl.vim'
 
 call plug#end()
 
-colorscheme dracula
-
 set termguicolors
 
-colorscheme dracula
-
+colorscheme night-owl
 
 set inccommand=split
 set encoding=UTF-8
