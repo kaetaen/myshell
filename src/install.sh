@@ -78,10 +78,10 @@ install_packages () {
 
 set_theme () {
 	# Set fonts
-	sudo cp -r ./theme/jetbrainsmono /usr/share/fonts/
-	sudo cp -r ./theme/Dracula /usr/share/themes/
-	sudo cp -r ./theme/Dracula-cursors/ /usr/share/icons/
-	sudo cp -r ./theme/Dracula-folders/ /usr/share/icons/
+	sudo cp -r ./theme/jetbrainsmono/ /usr/share/fonts/
+	sudo cp -r ./theme/midnight-bluenight/ /usr/share/themes/
+	sudo cp -r ./theme/arcstarry/ /usr/share/icons/
+	sudo cp -r ./theme/breeze-noir/ /usr/share/icons/
 	
 	# > TERMINATOR
 	# git clone https://github.com/dracula/terminator.git
