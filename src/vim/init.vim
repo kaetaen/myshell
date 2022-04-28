@@ -26,13 +26,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'ryanoasis/vim-devicons'
   Plug 'sheerun/vim-polyglot'
-  Plug 'haishanh/night-owl.vim'
-
+  Plug 'ntk148v/vim-horizon'
 call plug#end()
 
 set termguicolors
 
-colorscheme night-owl
+colorscheme horizon
 
 set inccommand=split
 set encoding=UTF-8

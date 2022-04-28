@@ -47,7 +47,7 @@ set_config_files (){
 
 
 install_packages () {
-  PACKAGES="git tree neovim curl php apache2 mysql-server python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
+  PACKAGES="git tree neovim wget software-properties-common curl php apache2 papirus-icon-theme python3-pip python3-venv terminator redeclipse vlc redshift-gtk zsh"
   if which dnf 2>/dev/null
     then
       sudo dnf update -y && sudo dnf install $PACKAGES -y
@@ -79,10 +79,11 @@ install_packages () {
 set_theme () {
 	# Set fonts
 	sudo cp -r ./theme/jetbrainsmono/ /usr/share/fonts/
-	sudo cp -r ./theme/midnight-bluenight/ /usr/share/themes/
-	sudo cp -r ./theme/arcstarry/ /usr/share/icons/
-	sudo cp -r ./theme/breeze-noir/ /usr/share/icons/
+	sudo cp -r ./theme/flatred/ /usr/share/themes/
+	sudo cp -r ./theme/Numix-Cursor/ /usr/share/icons/
 	
+	wget -qO- https://git.io/papirus-folders-install | sh
+
 	# > TERMINATOR
 	# git clone https://github.com/dracula/terminator.git
 	# cd terminator ./install.sh
