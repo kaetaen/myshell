@@ -19,7 +19,7 @@
 #Create symbolic link for .zsh
 if [ -f  ~/.zshrc ]
 	then
-		read -p "O arquivo .bashrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
+		read -p "O arquivo .zshrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_bash
 		if [ "$overwrite_bash" == "s" ]
 			then
 	rm -rf ~/.zshrc
@@ -32,30 +32,16 @@ fi
 
 # Create symbolic link for init.vim
 
-if [ -f  ~/.config/nvim/init.vim ]
+if [ -f  ~/.config/nvim/init.lua ]
 	then
-		read -p "O arquivo init.vim já existe. Deseja sobrescreve-lo [s/N]: " overwrite_nvim
+		read -p "O arquivo init.lua já existe. Deseja sobrescreve-lo [s/N]: " overwrite_nvim
 		if [ "$overwrite_nvim" == "s" ]
 			then
-	rm -rf ~/.config/nvim/init.vim
-	cp ./vim/init.vim ~/.config/nvim/init.vim
+	rm -rf ~/.config/nvim/init.lua
+	cp ./vim/init.lua ~/.config/nvim/init.lua
 		fi
 else
 	rm -rf ~/.config/nvim/
 	mkdir -p ~/.config/nvim/
-	cp ./vim/init.vim ~/.config/nvim/init.vim
+	cp ./vim/init.lua ~/.config/nvim/init.lua
 fi
-
-if [ -f  ~/.vimrc ]
-	then
-		read -p "O arquivo .vimrc já existe. Deseja sobrescreve-lo [s/N]: " overwrite_vim
-		if [ "$overwrite_vim" == "s" ]
-			then
-	rm -rf ~/.vimrc
-	cp ./vim/init.vim ~/.vimrc
-		fi
-else
-	rm -rf ~/.vimrc
-	cp ./vim/init.vim ~/.vimrc
-fi
-
