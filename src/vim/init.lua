@@ -164,3 +164,5 @@ vim.opt.clipboard="unnamedplus"
 vim.keymap.set("","tt", ":sp+terminal<CR>")
 -- open/close code fold
 vim.keymap.set("", "z", "za")
+-- disable brackets in icons at nerdtree
+vim.g.webdevicons_conceal_nerdtree_brackets = 1
